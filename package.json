@@ -1,0 +1,13 @@
+{
+  "name": "nearfix",
+  "version": "2.1.0",
+  "private": true,
+  "description": "NearFix AI-powered local service marketplace — single-command full-stack demo",
+  "scripts": {
+    "start": "node start.js",
+    "dev": "node start.js",
+    "check": "node --check backend/server.js && node --check frontend/app.js && node --check start.js",
+    "reset-demo": "node scripts/reset-demo.js"
+  },
+  "engines": {"node": ">=18"}
+}

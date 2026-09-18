@@ -767,5 +767,5 @@ function serve(req,res){
 }
 
 const server=http.createServer(async(req,res)=>{ try{const url=new URL(req.url,`http://${req.headers.host||'localhost'}`);if(url.pathname.startsWith('/api/'))return await api(req,res,url);serve(req,res);}catch(e){console.error(e);json(res,500,{success:false,message:e.message||'Internal server error',code:'SERVER_ERROR'});} });
-function listen(port){ server.once('error',err=>{ if(err.code==='EADDRINUSE') return listen(port+1); throw err; }); server.listen(port,'127.0.0.1',()=>console.log(`NearFix API + web running at http://localhost:${port}`)); }
+function listen(port){ server.once('error',err=>{ if(err.code==='EADDRINUSE') return listen(port+1); throw err; }); server.listen(port,'0.0.0.0',()=>console.log(`NearFix API + web running at http://0.0.0.0:${port}`)); }
 listen(PORT);
